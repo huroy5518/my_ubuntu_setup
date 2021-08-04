@@ -10,4 +10,4 @@ ansible installed
 ansible-playbook -i inventory playbook.yml --ask-pass --ask-become-pass
 
 ### Todo
-Add whatever I need in the future.
+- Add whatever I need in the future.
