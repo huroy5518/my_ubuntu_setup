@@ -1,0 +1,6 @@
+---
+- name: dpkg_install
+  apt:
+    deb: "/tmp/{{ item.name }}"
+    state: present
+  become: yes

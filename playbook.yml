@@ -1,0 +1,5 @@
+---
+- name: setup my ubuntu computer
+  hosts: "host"
+  roles:
+    - install_necessary_package

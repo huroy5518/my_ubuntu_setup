@@ -1,0 +1,25 @@
+---
+
+- name: apt install packages
+  apt:
+    name: "{{ apt_install_packages }}"
+    state: present
+    update_cache: yes
+  become: yes
+- name: copy install script
+  copy:
+    src: "{{ item.script }}"
+    dest: "/home/{{ ansible_user }}/{{ item.script }}"
+  loop: "{{ script_install_packages }}"
+- name: give install script
+  command: "chmod +x {{ item.script }}"
+  loop: "{{ script_install_packages }}"
+    
+- name: run install script
+  command: "./{{ item.script }}"
+  become: yes
+  loop: "{{ script_install_packages }}"
+
+- name: run setup script
+  script: "{{ playbook_dir }}/roles/install_necessary_package/files/{{ item }}"
+  loop: "{{ script_setup }}"

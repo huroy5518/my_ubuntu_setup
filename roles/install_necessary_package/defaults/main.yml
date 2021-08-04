@@ -1,0 +1,31 @@
+---
+apt_install_packages:
+  - build-essential
+  - python3
+  - python2
+  - python3-pip
+  - openjdk-8-jre
+  - vim-gtk3
+  - nodejs
+  - gdb
+  - nmap
+  - net-tools
+  - wireless-tools
+  - wireshark
+  - vlc
+  - zlib1g-dev
+  - p7zip-full
+  - zsh
+  - npm
+
+dpkg_install_packages:
+  - url: "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+    name: vscode
+  
+script_install_packages:
+  - script: vscode.sh
+
+script_setup:
+  - zim.sh
+  - vim.sh
+  - gdb.sh
