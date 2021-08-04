@@ -8,3 +8,6 @@ ansible installed
 
 ### usage
 ansible-playbook -i inventory playbook.yml --ask-pass --ask-become-pass
+
+### Todo
+Add whatever I need in the future.
